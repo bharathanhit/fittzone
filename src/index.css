@@ -1,0 +1,38 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Apply gradient to entire body without touching HTML or JSX */
+body {
+  @apply m-0 p-0 min-h-screen bg-gradient-to-b from-[#001F3F] to-[#CCCCCC] text-white;
+}
+.perspective {
+  perspective: 1000px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+.ripple-effect {
+  position: absolute;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.4);
+  animation: ripple-animation 0.6s linear;
+  transform: scale(0);
+  pointer-events: none;
+  z-index: 10;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+/* Removed JavaScript configuration block */
